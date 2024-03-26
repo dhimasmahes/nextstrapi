@@ -1,18 +1,22 @@
 import Link from "next/link";
 
-export default function HeroSection({ imgSrc, headline, theme = "turquoise" }) {
+const HeroSection = ({ imgSrc, headline, theme = "turquoise" }) => {
   return (
     <section className="hero">
-      <div className="hero__backkground">
+      <div className="hero__background">
         <img src={imgSrc || "/assets/hero-home.png"} alt="" />
       </div>
       <div className={`hero__headline hero__headline--${theme}`}>
-        {headline || <h1>Headline ,issing</h1>}
+        {headline || <h1>Headline missing</h1>}
       </div>
-      <Link href="/events">
-        <button className={`btn btn--medium btn--${theme}`}>BOOK NOW</button>
-      </Link>
+
+        <button className={`btn btn--medium btn--${theme}`}>
+          <Link href="/events">BOOK NOW</Link>
+        </button>
+      
       <img className={`hero__logo hero__logo--${theme}`} src="/assets/logo.svg" alt="" width={120} height={185}/>
     </section>
   );
-}
+};
+
+export default HeroSection;
