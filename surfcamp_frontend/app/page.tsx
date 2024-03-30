@@ -1,13 +1,12 @@
-import axios from "axios";
 import HeroSection from "./_components/HeroSection";
 import InfoBlock from "./_components/InfoBlock";
-import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils"
+import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
 
 export default async function Home() {
   const data = await fetchDataFromStrapi("infoblocks-landing?populate=deep");
   const infoBlockData = processInfoBlocks(data);
 
-  console.log(infoBlockData);
+  // console.log(infoBlockData);
 
   const heroHeadline = (
     <>
@@ -23,8 +22,6 @@ export default async function Home() {
       {infoBlockData.map((data) => 
       <InfoBlock key={data.id} data={data} />
       )}
-      {/* <InfoBlock data={infoBlockData}/>
-      <InfoBlock data={{...infoBlockData, reversed: true}}/> */}
     </main> 
   );
 }

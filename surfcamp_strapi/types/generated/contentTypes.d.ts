@@ -806,7 +806,7 @@ export interface ApiInfoBlockInfoBlock extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<false>;
     button: Attribute.Component<'info-block.button'>;
-    text: Attribute.Text & Attribute.Required;
+    text: Attribute.Blocks & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
