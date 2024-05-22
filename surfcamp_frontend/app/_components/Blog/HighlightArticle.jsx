@@ -9,7 +9,7 @@ export default function HighlightArticle({ data }) {
             <p className="copy">{excerpt}</p>
             <Link className="btn btn--turquoise btn--medium" href={`/blog/${slug}`}>Read more</Link>
         </div>
-        <img src={featuredImage} alt=""/>
+        <img className="highlight-article__image" src={featuredImage} alt=""/>
     </article>
   );
 }

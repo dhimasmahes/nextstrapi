@@ -16,7 +16,7 @@ export default async function Page() {
   const featuredArticles = data.filter (
     (article) => !article.isHighlightArticle
   );
-  // find the articles that are not highlight blog article but sorted by publishied date
+  // find the articles that are not highlight blog article but sorted by published date
 
 
   return (

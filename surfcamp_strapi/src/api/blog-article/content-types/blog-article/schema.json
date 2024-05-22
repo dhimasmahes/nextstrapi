@@ -4,7 +4,8 @@
   "info": {
     "singularName": "blog-article",
     "pluralName": "blog-articles",
-    "displayName": "Blog Article"
+    "displayName": "Blog Article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -22,12 +23,12 @@
       "regex": "^[a-z0-9]+(?:(?:-|_)+[a-z0-9]+)*$"
     },
     "featuredImage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "author": {
       "type": "string",
@@ -40,6 +41,20 @@
     },
     "excerpt": {
       "type": "text",
+      "required": true
+    },
+    "articleContent": {
+      "type": "dynamiczone",
+      "components": [
+        "blog-article.headline",
+        "blog-article.paragraph-with-image",
+        "blog-article.paragraph",
+        "blog-article.landscape-image"
+      ]
+    },
+    "whiteText": {
+      "type": "boolean",
+      "default": false,
       "required": true
     }
   }

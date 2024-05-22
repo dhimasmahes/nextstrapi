@@ -794,6 +794,7 @@ export interface ApiBlogArticleBlogArticle extends Schema.CollectionType {
     singularName: 'blog-article';
     pluralName: 'blog-articles';
     displayName: 'Blog Article';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -807,6 +808,17 @@ export interface ApiBlogArticleBlogArticle extends Schema.CollectionType {
       Attribute.Required &
       Attribute.DefaultTo<false>;
     excerpt: Attribute.Text & Attribute.Required;
+    articleContent: Attribute.DynamicZone<
+      [
+        'blog-article.headline',
+        'blog-article.paragraph-with-image',
+        'blog-article.paragraph',
+        'blog-article.landscape-image'
+      ]
+    >;
+    whiteText: Attribute.Boolean &
+      Attribute.Required &
+      Attribute.DefaultTo<false>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

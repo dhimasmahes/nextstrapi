@@ -47,13 +47,15 @@
 }
 
 .article-paragraph {
-  margin-bottom: 6rem;
-  & ul {
-    margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
-    & li {
-      margin-left: 2rem;
-    }
+.article-list {
+  margin-top: 2rem;
+
+  & li {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
   }
 }
 

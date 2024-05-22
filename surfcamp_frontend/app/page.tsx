@@ -1,5 +1,6 @@
 import HeroSection from "./_components/HeroSection";
 import InfoBlock from "./_components/InfoBlock";
+import BlogPreview from "./_components/BlogPreview/BlogPreview";
 import { fetchDataFromStrapi, processInfoBlocks } from "@/utils/strapi.utils";
 
 export default async function Home() {
@@ -16,12 +17,15 @@ export default async function Home() {
     </>
   );
 
+  const imgSrcPath = "/assets/hero-home.png";
+
   return (
     <main>
-      <HeroSection headline={heroHeadline}/>
+      <HeroSection headline={heroHeadline} imgSrc={imgSrcPath}/>
       {infoBlockData.map((data) => 
       <InfoBlock key={data.id} data={data} />
       )}
+      <BlogPreview />
     </main> 
   );
 }
